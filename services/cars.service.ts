@@ -4,7 +4,7 @@ import carsSequelize from "../models/cars.sequelize";
 import { ICars } from "../interfaces/interface";
 
 class ServiceCars {
-  constructor() {}
+  constructor() { }
 
   async getCars(params?: any) {
     try {
@@ -50,6 +50,8 @@ class ServiceCars {
     try {
       const data = await carsKnex.deleteCar(id, params); // Knex
       // const data = await carsSequelize.deleteCar(id); // Sequelize
+      console.log(id, params);
+      console.log(data);
       return data;
     } catch (error) {
       return error;

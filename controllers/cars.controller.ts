@@ -9,7 +9,7 @@ interface AuthenticatedRequest extends Request {
 }
 
 class ControllerCars implements CarController {
-  constructor() {}
+  constructor() { }
 
   async getCars(req: Request, res: Response) {
     try {
@@ -98,7 +98,7 @@ class ControllerCars implements CarController {
         picture: req.body.picture,
         available: req.body.available,
         edited_by: (req as AuthenticatedRequest).user.username,
-        updated_at: String(new Date()),
+        updated_at: new Date().toISOString(),
       };
 
       const car = (await ServiceCars.updateCar(id, params)) as ICars;
@@ -120,7 +120,7 @@ class ControllerCars implements CarController {
       available: false,
       status: "deleted",
       deleted_by: (req as AuthenticatedRequest).user.username,
-      updated_at: String(new Date()),
+      updated_at: new Date().toISOString()
     };
     try {
       const car = (await ServiceCars.deleteCar(id, params).then((data) => {

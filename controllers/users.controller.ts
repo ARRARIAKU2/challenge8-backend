@@ -115,7 +115,7 @@ class ControllerUsers implements UserController {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      updated_at: String(new Date()),
+      updated_at: new Date().toISOString(),
     };
     try {
       const user = (await ServiceUsers.updateUser(id, params)) as IUser;

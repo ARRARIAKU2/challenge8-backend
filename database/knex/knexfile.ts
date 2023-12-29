@@ -25,15 +25,6 @@ class KnexConfigurator {
     //   port: 5432,
     // },
 
-    // Username:    postgres
-    // Password:    4eV6BvsLxzvOMj1
-    // Hostname:    challange8.internal
-    // Flycast:     fdaa:4:3d8e:0:1::6
-    // Proxy port:  5432
-    // Postgres port:  5433
-    // Connection string: postgres://postgres:4eV6BvsLxzvOMj1@challange8.flycast:5432
-    // connection: "postgres://postgres:4eV6BvsLxzvOMj1@challange8.internal:5432/postgres", // Fly.io
-
     connection: "postgresql://postgres:Cabc1AGfCg6c-GBEaF*eE6-6EEFBegEc@monorail.proxy.rlwy.net:42413/railway", // Railway
     pool: {
       min: 2,
